@@ -9,6 +9,7 @@
 bool bit_is_set(uint32_t value, uint8_t bit_position); 
 uint32_t bit_set(uint32_t value, uint8_t bit_position); 
 uint32_t bit_unset(uint32_t value, uint8_t bit_position); 
+uint32_t bit_toggle(uint32_t value, uint8_t bit_position);
 
 char* binary_to_string(uint32_t value); 
 
