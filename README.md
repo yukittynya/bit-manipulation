@@ -11,8 +11,6 @@ This is part of my self studies, at the time of writing, I am working on bits, b
 
 ```bit_unset``` Unets the bit at the index via the argument _bit_position_. 
 
-```bit_set``` Sets the bit at the index via the argument _bit_position_. 
-
 ```bit_toggle``` Sets the bit at the index via the argument _bit_position_ to its oppposite value, toggling the bit.
 
 #### Range bit manipulation
