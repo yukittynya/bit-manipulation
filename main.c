@@ -6,16 +6,16 @@ int main(int argc, char** argv) {
   printf("Binary of %d\n", value);
   pretty_print_binary(value);
 
-  printf("\nSetting Bit 2...\n");
-  value = bit_set(value, 2);
+  printf("\nSetting Bit 10...\n");
+  bit_set(&value, 10);
   pretty_print_binary(value);
 
   printf("\nClearing Bit 0...\n");
-  value = bit_unset(value, 0);
+  bit_unset(&value, 0);
   pretty_print_binary(value);
 
   printf("\nToggling bit 3...\n");
-  value = bit_toggle(value, 3);
+  bit_toggle(&value, 3);
   pretty_print_binary(value);
 
   printf("\nRange 29 - 32...\n");

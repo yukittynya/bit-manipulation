@@ -8,9 +8,9 @@
 
 //Basic 
 bool bit_is_set(uint32_t value, uint8_t bit_position); 
-uint32_t bit_set(uint32_t value, uint8_t bit_position); 
-uint32_t bit_unset(uint32_t value, uint8_t bit_position); 
-uint32_t bit_toggle(uint32_t value, uint8_t bit_position);
+void bit_set(uint32_t* value, uint8_t bit_position); 
+void bit_unset(uint32_t* value, uint8_t bit_position); 
+void bit_toggle(uint32_t* value, uint8_t bit_position);
 
 //Range
 char* extract_range(uint32_t value, uint8_t left, uint8_t right); 

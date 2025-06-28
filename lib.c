@@ -6,16 +6,16 @@ inline bool bit_is_set(uint32_t value, uint8_t bit_position) {
   return (value & (1u << bit_position)) != 0;
 }
 
-inline uint32_t bit_set(uint32_t value, uint8_t bit_position) {
-    return value | (1u << bit_position);
+inline void bit_set(uint32_t* value, uint8_t bit_position) {
+    *value |= (1u << bit_position);
 }
 
-inline uint32_t bit_unset(uint32_t value, uint8_t bit_position) {
-    return value &~ (1u << bit_position);
+inline void bit_unset(uint32_t* value, uint8_t bit_position) {
+    *value &= ~(1u << bit_position);
 }
 
-inline uint32_t bit_toggle(uint32_t value, uint8_t bit_position) {
-  return value ^ (1u << bit_position); 
+inline void bit_toggle(uint32_t* value, uint8_t bit_position) {
+  *value ^= (1u << bit_position); 
 }
 
 //Range
