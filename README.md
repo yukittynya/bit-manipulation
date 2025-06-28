@@ -1,6 +1,6 @@
 # Bit Manipulation Library
 
-This is part of my self studies, at the time of writing, I am working on bits, binary and hexadecimals. I am only on the bits and binary part now, and this is my bit and binary manipulation library.
+This is part of my self studies, at the time of writing, I am working on bits, binary. I decided to create a bit manipulation library as part of my studies into comp sci.
 
 ## Documentation
 
