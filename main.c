@@ -18,7 +18,7 @@ int main(int argc, char** argv) {
   bit_toggle(&value, 3);
   pretty_print_binary(value);
 
-  printf("\nRange 29 - 32...\n");
-  char* result = extract_range(value, 29, 32);
+  printf("\nRange of 4 bits starting from bit 1...\n");
+  char* result = extract_range(value, 1, 4);
   printf("%s\n", result);
 }

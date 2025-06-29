@@ -19,17 +19,17 @@ inline void bit_toggle(uint32_t* value, uint8_t bit_position) {
 }
 
 //Range
-char* extract_range(uint32_t value, uint8_t left, uint8_t right) {
-  const size_t size = right - left + 1;
+char* extract_range(uint32_t value, uint8_t start, uint8_t num_bits) {
+  char* result = (char*) malloc(num_bits + 1);
 
-  char* result = (char*) malloc(size + 1);
+  uint32_t mask = ((1u << num_bits) - 1) << start;
+  uint32_t desired_range = (value & mask) >> start;
 
-  for (int i = 0; i <= size; i++) {
-    result[i] = bit_is_set(value, sizeof(uint32_t) * 8 - left) ? '1' : '0';
-    left++; 
+  for (int i = 0; i < num_bits; i++) {
+    result[num_bits - i - 1] = (bit_is_set(desired_range, i)) ? '1' : '0'; 
   }
 
-  result[size] = '\0';
+  result[num_bits] = '\0';
 
   return result;
 }
