@@ -13,6 +13,14 @@ This is part of my self studies, at the time of writing, I am working on bits an
 
 ```bit_toggle``` Sets the bit at the index via the argument _bit_position_ to its oppposite value, toggling the bit.
 
+#### Counting and searching
+
+```toggled_bit_count``` Returns the nuumber of toggled bits in value
+
+```first_toggled_bit``` Returns the index of the position of the first toggled bit (zero based index)
+
+```last_toggled_bit``` Returns the index of the position of the last toggled bit (zero based index)
+
 #### Range bit manipulation
 
 ```extract_range``` Extracts the bits in the range starting at bit _start_ (inclusive) for _num_bits_ and returns it as a string.  
