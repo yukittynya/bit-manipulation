@@ -1,6 +1,4 @@
 #include "lib.h"
-#include <stdint.h>
-#include <sys/types.h>
 
 //Basic
 inline bool bit_is_set(uint32_t value, uint8_t bit_position) {
