@@ -24,4 +24,10 @@ int main(int argc, char** argv) {
 
   printf("\nBit extract of 4 bits starting from 1...\n");
   printf("%d\n", bit_extract(value, 1, 4));
+
+  printf("\nInserting 6 into value at 2 for 4 bits...\nBefore: ");
+  pretty_print_binary(value);
+  insert_bits(&value, 6, 2, 4);
+  printf("Now: ");
+  pretty_print_binary(value);
 }
