@@ -1,5 +1,6 @@
 #include "lib.h"
 #include <stdint.h>
+#include <sys/types.h>
 
 //Basic
 inline bool bit_is_set(uint32_t value, uint8_t bit_position) {
@@ -16,6 +17,37 @@ inline void bit_unset(uint32_t* value, uint8_t bit_position) {
 
 inline void bit_toggle(uint32_t* value, uint8_t bit_position) {
   *value ^= (1u << bit_position); 
+}
+
+//Counting and searching
+uint8_t toggled_bit_count(uint32_t value) {
+  uint8_t result = 0;
+
+  for (int i = 0; i < (sizeof(value) * 8); i++) {
+    if (bit_is_set(value, 0)) result++;
+
+    value >>= 1;
+  }
+
+  return result;
+}
+
+uint8_t first_toggled_bit(uint32_t value) {
+  for (int i = 0; i < (sizeof(value) * 8); i++) {
+    if (bit_is_set(value, 0)  ) return i;
+
+    value >>= 1;
+  }
+
+  return 99;
+}
+
+uint8_t last_toggled_bit(uint32_t value) {
+  for (int i = (sizeof(value) * 8 - 1); i >= 0; i--) {
+    if (bit_is_set(value, i)) return i;
+  }
+
+  return 99;
 }
 
 //Range

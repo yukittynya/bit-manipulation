@@ -1,4 +1,5 @@
 #include "lib.h"
+#include <stdio.h>
 
 int main(int argc, char** argv) {
   uint32_t value = 5;
@@ -30,4 +31,8 @@ int main(int argc, char** argv) {
   insert_bits(&value, 6, 2, 4);
   printf("Now: ");
   pretty_print_binary(value);
+
+  printf("\nToggled bit count: %d\n", toggled_bit_count(value));
+  printf("\nFirst toggled bit: %d\n", first_toggled_bit(value));
+  printf("\nLast toggled bit: %d\n", last_toggled_bit(value));
 }
