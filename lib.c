@@ -1,4 +1,5 @@
 #include "lib.h"
+#include <stdint.h>
 
 //Basic
 inline bool bit_is_set(uint32_t value, uint8_t bit_position) {
@@ -21,7 +22,7 @@ inline void bit_toggle(uint32_t* value, uint8_t bit_position) {
 uint8_t toggled_bit_count(uint32_t value) {
   uint8_t result = 0;
 
-  for (int i = 0; i < (sizeof(value) * 8); i++) {
+  for (uint8_t i = 0; i < (sizeof(value) * 8); i++) {
     if (bit_is_set(value, 0)) result++;
 
     value >>= 1;
@@ -30,22 +31,22 @@ uint8_t toggled_bit_count(uint32_t value) {
   return result;
 }
 
-uint8_t first_toggled_bit(uint32_t value) {
-  for (int i = 0; i < (sizeof(value) * 8); i++) {
+int8_t first_toggled_bit(uint32_t value) {
+  for (uint8_t i = 0; i < (sizeof(value) * 8); i++) {
     if (bit_is_set(value, 0)  ) return i;
 
     value >>= 1;
   }
 
-  return 99;
+  return -1;
 }
 
-uint8_t last_toggled_bit(uint32_t value) {
-  for (int i = (sizeof(value) * 8 - 1); i >= 0; i--) {
+int8_t last_toggled_bit(uint32_t value) {
+  for (uint8_t i = (sizeof(value) * 8 - 1); i >= 0; i--) {
     if (bit_is_set(value, i)) return i;
   }
 
-  return 99;
+  return -1;
 }
 
 //Range
@@ -55,7 +56,7 @@ char* extract_range(uint32_t value, uint8_t start, uint8_t num_bits) {
   uint32_t mask = ((1u << num_bits) - 1) << start;
   uint32_t desired_range = (value & mask) >> start;
 
-  for (int i = 0; i < num_bits; i++) {
+  for (uint8_t i = 0; i < num_bits; i++) {
     result[num_bits - i - 1] = (bit_is_set(desired_range, i)) ? '1' : '0'; 
   }
 
@@ -83,7 +84,7 @@ char* binary_to_string(uint32_t value) {
 
   char* result = (char*) malloc(size + 1);
 
-  for (int i = 0; i < size; i++) {
+  for (uint8_t i = 0; i < size; i++) {
     result[i] = bit_is_set(value, size - i - 1) ? '1' : '0';
   }
 
@@ -95,7 +96,7 @@ char* binary_to_string(uint32_t value) {
 void print_binary(uint32_t value) {
   const size_t size = sizeof(uint32_t) * 8;
 
-  for (int i = 0; i < size; i++) {
+  for (uint8_t i = 0; i < size; i++) {
     bit_is_set(value, size - i - 1) ? printf("%c", '1') : printf("%c", '0');
   }
 }
@@ -103,7 +104,7 @@ void print_binary(uint32_t value) {
 void pretty_print_binary(uint32_t value) {
   const size_t size = sizeof(uint32_t) * 8;
 
-  for (int i = 0; i < size; i++) {
+  for (uint8_t i = 0; i < size; i++) {
     bit_is_set(value, size - i - 1) ? printf("%c", '1') : printf("%c", '0');
 
     if ((i + 1) % 8 == 0) {

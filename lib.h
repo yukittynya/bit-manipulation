@@ -14,8 +14,8 @@ void bit_toggle(uint32_t* value, uint8_t bit_position);
 
 //Counting and searching
 uint8_t toggled_bit_count(uint32_t value);
-uint8_t first_toggled_bit(uint32_t value);
-uint8_t last_toggled_bit(uint32_t value);
+int8_t first_toggled_bit(uint32_t value);
+int8_t last_toggled_bit(uint32_t value);
 
 //Range
 char* extract_range(uint32_t value, uint8_t start, uint8_t num_bits); 

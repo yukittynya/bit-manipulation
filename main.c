@@ -1,5 +1,12 @@
 #include "lib.h"
 #include <stdio.h>
+#include <sys/resource.h>
+
+void print_memory_usage() {
+    struct rusage usage;
+    getrusage(RUSAGE_SELF, &usage);
+    printf("Peak memory usage: %ld KB\n", usage.ru_maxrss);
+}
 
 int main(int argc, char** argv) {
   uint32_t value = 5;
@@ -35,4 +42,6 @@ int main(int argc, char** argv) {
   printf("\nToggled bit count: %d\n", toggled_bit_count(value));
   printf("\nFirst toggled bit: %d\n", first_toggled_bit(value));
   printf("\nLast toggled bit: %d\n", last_toggled_bit(value));
+
+  print_memory_usage();
 }
