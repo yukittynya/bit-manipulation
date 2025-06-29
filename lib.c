@@ -34,6 +34,19 @@ char* extract_range(uint32_t value, uint8_t start, uint8_t num_bits) {
   return result;
 }
 
+uint32_t bit_extract(uint32_t value, uint8_t start, uint8_t num_bits) {
+  uint32_t mask = (1u << num_bits) - 1;
+  
+  return (value >> start) & mask; 
+}
+
+void insert_bits(uint32_t* value, uint32_t src, uint8_t start, uint8_t num_bits) {
+  uint32_t mask = (1u << num_bits) - 1; 
+
+  *value &= ~(mask << start);        
+  *value |= ((src & mask) << start);  
+}
+
 //Printing and to strings
 char* binary_to_string(uint32_t value) {
   const size_t size = sizeof(value) * 8;

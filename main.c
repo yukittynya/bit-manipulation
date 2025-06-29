@@ -21,4 +21,7 @@ int main(int argc, char** argv) {
   printf("\nRange of 4 bits starting from bit 1...\n");
   char* result = extract_range(value, 1, 4);
   printf("%s\n", result);
+
+  printf("\nBit extract of 4 bits starting from 1...\n");
+  printf("%d\n", bit_extract(value, 1, 4));
 }

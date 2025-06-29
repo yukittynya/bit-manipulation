@@ -14,6 +14,8 @@ void bit_toggle(uint32_t* value, uint8_t bit_position);
 
 //Range
 char* extract_range(uint32_t value, uint8_t start, uint8_t num_bits); 
+uint32_t bit_extract(uint32_t value, uint8_t start, uint8_t num_bits);
+void insert_bits(uint32_t* value, uint32_t src, uint8_t start, uint8_t num_bits);
 
 //Printing and to strings
 char* binary_to_string(uint32_t value); 
