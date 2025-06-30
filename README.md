@@ -27,6 +27,10 @@ This is part of my self studies, at the time of writing, I am working on bits an
 
 ```insert_bits``` Inserts bits of _src_ at position _start_ into _value_, inserts the number of bits _num_bits_.
 
+#### Utility functions? Dont know what to call it, useful stuff with bitwise ops :3 
+
+```swap_vars``` Swaps variables, a and b, via XOR'ing them, takes in references
+
 #### Printing
 
 ```binary_to_string```Returns the given varible as binary in a string.
