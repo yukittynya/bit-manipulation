@@ -22,6 +22,9 @@ char* extract_range(uint32_t value, uint8_t start, uint8_t num_bits);
 uint32_t bit_extract(uint32_t value, uint8_t start, uint8_t num_bits);
 void insert_bits(uint32_t* value, uint32_t src, uint8_t start, uint8_t num_bits);
 
+//Util functions?? dont know what to know name int
+void swap_vars(uint32_t* a, uint32_t* b); 
+
 //Printing and to strings
 char* binary_to_string(uint32_t value); 
 

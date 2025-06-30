@@ -1,5 +1,4 @@
 #include "lib.h"
-#include <stdint.h>
 
 //Basic
 inline bool bit_is_set(uint32_t value, uint8_t bit_position) {
@@ -76,6 +75,13 @@ void insert_bits(uint32_t* value, uint32_t src, uint8_t start, uint8_t num_bits)
 
   *value &= ~(mask << start);        
   *value |= ((src & mask) << start);  
+}
+
+//Utility functions
+inline void swap_vars(uint32_t *a, uint32_t *b) {
+  *a ^= *b;
+  *b ^= *a;
+  *a ^= *b;
 }
 
 //Printing and to strings

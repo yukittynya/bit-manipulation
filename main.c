@@ -5,7 +5,7 @@
 void print_memory_usage() {
     struct rusage usage;
     getrusage(RUSAGE_SELF, &usage);
-    printf("Peak memory usage: %ld KB\n", usage.ru_maxrss);
+    printf("\nPeak memory usage: %ld KB\n", usage.ru_maxrss);
 }
 
 int main(int argc, char** argv) {
@@ -42,6 +42,11 @@ int main(int argc, char** argv) {
   printf("\nToggled bit count: %d\n", toggled_bit_count(value));
   printf("\nFirst toggled bit: %d\n", first_toggled_bit(value));
   printf("\nLast toggled bit: %d\n", last_toggled_bit(value));
+
+  uint32_t a = 32, b = 16;
+  printf("\na=%d, b=%d\n", a, b);
+  swap_vars(&a, &b);
+  printf("\na=%d, b=%d\n", a, b);
 
   print_memory_usage();
 }
