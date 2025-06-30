@@ -48,5 +48,11 @@ int main(int argc, char** argv) {
   swap_vars(&a, &b);
   printf("\na=%d, b=%d\n", a, b);
 
+  if (is_even(&value)) {
+    printf("\nValue is even: %d\n", value); } 
+  else {
+    printf("\nValue is odd: %d\n", value);
+  }
+
   print_memory_usage();
 }

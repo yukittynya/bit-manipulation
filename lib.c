@@ -1,4 +1,5 @@
 #include "lib.h"
+#include <stdint.h>
 
 //Basic
 inline bool bit_is_set(uint32_t value, uint8_t bit_position) {
@@ -82,6 +83,14 @@ inline void swap_vars(uint32_t *a, uint32_t *b) {
   *a ^= *b;
   *b ^= *a;
   *a ^= *b;
+}
+
+inline bool is_even(uint32_t* value) {
+  return (*value & 1u) == 0;
+}
+
+inline bool is_odd(uint32_t* value) {
+  return (*value & 1u) == 1;
 }
 
 //Printing and to strings

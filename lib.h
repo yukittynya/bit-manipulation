@@ -24,6 +24,8 @@ void insert_bits(uint32_t* value, uint32_t src, uint8_t start, uint8_t num_bits)
 
 //Util functions?? dont know what to know name int
 void swap_vars(uint32_t* a, uint32_t* b); 
+bool is_even(uint32_t* value);
+bool is_odd(uint32_t* value);
 
 //Printing and to strings
 char* binary_to_string(uint32_t value); 
