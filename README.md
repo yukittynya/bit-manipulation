@@ -31,9 +31,9 @@ This is part of my self studies, at the time of writing, I am working on bits an
 
 ```swap_vars``` Swaps variables, a and b, via XOR'ing them, takes in references
 
-```is_even``` Checks if value is even, returns a bool and takes in a refernce
+```is_even``` Checks if value is even, returns a bool and takes in a reference 
 
-```is_odd``` Checks if value is odd, returns a bool and takes in a refernce
+```is_odd``` Checks if value is odd, returns a bool and takes in a reference
 
 #### Printing
 
